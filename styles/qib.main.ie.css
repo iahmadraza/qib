@@ -1,0 +1,279 @@
+/*
+    IE specific CSS for overfixing issues
+*/
+
+/* global navigation button for small resolution */
+header.global-header .in-global-header .header-content .bcon-glnav,
+header.global-header .in-global-header .header-content .bcon-back {
+    margin-top: 24px;
+}
+html[data-useragent*='MSIE 10.0'] header.global-header .in-global-header .header-content .lcon-logo {
+    flex: 1 1 230px;
+}
+
+html[data-useragent*='MSIE 10.0'] header.global-header .in-global-header .header-content nav.global-navigation .lst-global-navigation li {
+    height: auto;
+}
+
+/* checkbox update IE 10 & 11 */
+label.toggle span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border: 2px solid #cccccc;
+    -ms-border-radius: 34px;
+    border-radius: 34px;
+    -ms-transition: 0.4s;
+        transition: 0.4s;
+}
+label.toggle span::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    top: 0px;
+    background-color: white;
+    /* border:1px solid #cccccc; */
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    -ms-transform: translate(0px, 0px);
+    -ms-transform: translateX(0px);
+        transform: translateX(0px);
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+}
+label.toggle input:checked + span {
+    background-color: #2cc532;
+    border-color: #2cc532;
+}
+label.toggle input:disabled + span {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+}
+label.toggle input:disabled:checked + span {
+    background-color: #818181;
+    border-color: #818181;
+    cursor: not-allowed;
+}
+label.toggle input:checked + span::before {
+    -ms-transform: translate(20px, 0px);
+    -ms-transform: translateX(20px);
+        transform: translateX(20px);
+}
+
+/* header items margin fix */
+header.global-header .in-global-header .header-content .header-items {
+    margin: 15px auto;
+}
+
+.form-controller input::-ms-clear {
+    display: none;
+}
+
+ /* issue detail */
+    /* for IE fund transfer page on selecting to account select account popup arises.
+    circle of images getting distracted */
+
+.account-card .ac-icon {
+    padding-top:14px;
+    padding-left: 10px;
+}
+.account-card .ac-icon span {
+    background-color: #f0f0f0;
+    height: 60px;
+    width: 60px;
+    display: block;
+    border-radius: 50%;
+}
+.account-card .ac-icon img {width: inherit;height: inherit;}
+.account-card .ac-icon .bc-icon {height: 60px; width: 60px;display: block;}
+
+.form-controller .custom-checkbox label input[type=checkbox]{
+    opacity:0;
+}
+
+  .custom-checkbox label span.spanbox {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0075B0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: block;
+    margin-top: -10px;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+.custom-checkbox label input:checked + span.spanbox{
+    background-color: #0075B0;
+}
+
+.custom-checkbox label input:checked + span.spanbox:before {
+    content: "";
+    position: absolute;
+      width: 12px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-top: 0 solid transparent;
+    border-right: 0 solid transparent;
+    left: 16%;
+    margin-top: 1px;
+     -webkit-transform: rotate(-45deg);
+    -webkit-transform: -webkit-rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.custom-checkbox span.info-value{
+    padding-left: 5%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 360px) {
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+      top: 11% !important;
+      right: 5% !important;
+    }
+  }
+
+  @media screen and (min-width: 370px) and (max-width: 390px) {
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+      right: 10% !important;
+      top: 21% !important;
+    }
+  }
+
+  @media screen and (min-width: 391px) and (max-width: 411px) {
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+      right: 14% !important;
+      top: 21% !important;
+    }
+  }
+
+  @media screen and (min-width: 412px) and (max-width: 560px) {
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+      right: 15% !important;
+      top: 16% !important;
+    }
+  }
+
+  @media screen and (min-width: 568px) and (max-width: 768px) {
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+        right: 21% !important;
+        top: 16% !important;
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+        right: 29% !important;
+        top: 21% !important;
+    }
+
+    header.global-header .in-global-header .header-content nav.global-navigation{
+      display: block;
+      width:auto;
+    }
+
+    header.global-header .in-global-header .header-content nav.global-navigation .lst-global-navigation li{
+      position: relative;
+    }
+  }
+
+  @media screen and (min-width: 1920px){
+    .receipt-modal#share-acc-info .receiptmodal .receiptmodal-header .btn-rm-close {
+        right: 35% !important;
+        top: 21% !important;
+    }
+
+    .receipt-modal#fund-transfer-success .btn-rm-close{
+      right: 34% !important;
+      top: 17% !important;
+  }
+  }
+
+  @media (min-width: 418px) and (max-width: 590px){
+    .receipt-modal .rm-icon {top: 11% !important; left: 47% !important;}
+}
+
+@media (min-width: 640px) and (max-width: 760px){
+    .receipt-modal .rm-icon {top: 18% !important; left: 47% !important;}
+
+}
+
+@media screen and (min-width: 412px) and (max-width: 500px) {
+    .receipt-modal#fund-transfer-success .btn-rm-close {
+      right: 20% !important;
+      top: 11% !important;
+    }
+  }
+
+.md-component .md-part ul.rec-transactions{
+    max-height: 450px;
+}
+
+
+  .calculation .md-part.fd-transfer .bank-charges img{
+    width:22px;
+    height: 22px;
+    margin-top:0px;
+  }
+
+  .calculation .md-part.fd-transfer .bank-charges p{
+    padding: 3px 0 0;
+  }
+
+  .form-controller textarea{
+    border-color: #aeb1b3;
+  }
+
+/* agatsya css */
+  .receipt-modal#share-acc-info .receiptmodal.pops .receiptmodal-header h4 {
+    display: inline-block;
+  }
+
+  .receipt-modal#share-acc-info .receiptmodal.pops .receiptmodal-header .btn-rm-close {
+    display: inline-block;
+    right: 21% !important;
+    top: 11% !important;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1360px){
+    .receipt-modal#share-acc-info .receiptmodal.pops .receiptmodal-header .btn-rm-close {
+      right: 27% !important;
+    }
+  }
+
+  @media screen and (min-width: 1366px) and (max-width: 1500px){
+    .receipt-modal#share-acc-info .receiptmodal.pops .receiptmodal-header .btn-rm-close {
+      right: 28% !important;
+    }
+  }
+
+  @media screen and (min-width: 1870px){
+    .receipt-modal#share-acc-info .receiptmodal.pops .receiptmodal-header .btn-rm-close {
+      right: 34.5% !important;
+    }
+  }
+
+/* Only for IE 10+*/
+@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+  .direct-debit-container .menu-tabs .menutabs-container .menutabs-content .accordion .card .card-header,
+  .direct-debit-container .md-component .md-part .direct-debit-lg-part .accordion .card .card-header{
+    padding: 5px 10px 0;
+  }
+}
+
+#fileinput{
+  font-size: 0;
+}
+
